@@ -19,8 +19,10 @@ namespace C3D_table_export
         [CommandMethod("command2")]
         public void Command1()
         {
-            C3D_table tabl = new C3D_table();
-            tabl.Select("\nSelect Material tables to extract: ");
+            //C3D_table tabl = new C3D_table();
+            //tabl.Select("\nSelect Material tables to extract: ");
+            Acad_table table = new Acad_table();
+            table.Select();
         }
     }
 
