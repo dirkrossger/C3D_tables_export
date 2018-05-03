@@ -1,0 +1,5 @@
+H:\GitExtensions\C3D_table_export\C3D_table_export\bin\Debug\C3D_table_export.dll
+H:\GitExtensions\C3D_table_export\C3D_table_export\bin\Debug\C3D_table_export.pdb
+H:\GitExtensions\C3D_table_export\C3D_table_export\obj\Debug\C3D_table_export.dll
+H:\GitExtensions\C3D_table_export\C3D_table_export\obj\Debug\C3D_table_export.pdb
+H:\GitExtensions\C3D_table_export\C3D_table_export\obj\Debug\C3D_table_export.csprojResolveAssemblyReference.cache
