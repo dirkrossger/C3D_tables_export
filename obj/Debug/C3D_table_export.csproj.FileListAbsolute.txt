@@ -7,3 +7,7 @@ H:\GitExtenions\C3D_tables_export\bin\Debug\C3D_table_export.dll
 H:\GitExtenions\C3D_tables_export\bin\Debug\C3D_table_export.pdb
 H:\GitExtenions\C3D_tables_export\obj\Debug\C3D_table_export.dll
 H:\GitExtenions\C3D_tables_export\obj\Debug\C3D_table_export.pdb
+h:\GitExtensions\C3D_table_export\C3D_tables_export\bin\Debug\C3D_table_export.dll
+h:\GitExtensions\C3D_table_export\C3D_tables_export\bin\Debug\C3D_table_export.pdb
+h:\GitExtensions\C3D_table_export\C3D_tables_export\obj\Debug\C3D_table_export.dll
+h:\GitExtensions\C3D_table_export\C3D_tables_export\obj\Debug\C3D_table_export.pdb

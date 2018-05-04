@@ -19,9 +19,11 @@ namespace C3D_table_export
     {
         public void Select()
         {
-
             Document doc = Application.DocumentManager.MdiActiveDocument;
             Editor ed = doc.Editor;
+            List<TableData> list = new List<TableData>();
+            List<string> values;
+
             PromptEntityOptions peo = new PromptEntityOptions("\nSelect table");
             peo.SetRejectMessage("\nMust be a table.");
             peo.AddAllowedClass(typeof(Table), false);
@@ -39,14 +41,31 @@ namespace C3D_table_export
                 {
                     for (int r = 0; r < tab.Rows.Count; r++)
                     {
+                        values = new List<string>();
                         for (int c = 0; c < tab.Columns.Count; c++)
                         {
                             var cell = tab.Cells[r, c];
-                            mt.Contents = cell.TextString;
+                            values.Add(cell.TextString);
+                            //mt.Contents = cell.TextString;
                         }
+
+                        list.Add(new TableData
+                        {
+                            Line = r.ToString(), Values = values
+                        });
                     }
                 }
             }
+
+            ExportExcel.ExportToExcel(list);
         }
+
+
+    }
+
+    public class TableData
+    {
+        public string Line { get; set; }
+        public List<string> Values { get; set; }
     }
 }
