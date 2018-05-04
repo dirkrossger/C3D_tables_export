@@ -70,6 +70,7 @@
     <Compile Include="C3D_table.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="ExportExcel.cs" />
+    <Compile Include="ExternDwg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

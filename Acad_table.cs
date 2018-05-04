@@ -59,8 +59,6 @@ namespace C3D_table_export
 
             ExportExcel.ExportToExcel(list);
         }
-
-
     }
 
     public class TableData

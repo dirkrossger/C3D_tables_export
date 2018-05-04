@@ -19,10 +19,16 @@ namespace C3D_table_export
         [CommandMethod("command2")]
         public void Command1()
         {
-            //C3D_table tabl = new C3D_table();
-            //tabl.Select("\nSelect Material tables to extract: ");
-            Acad_table table = new Acad_table();
-            table.Select();
+            C3D_table tabl = new C3D_table();
+            tabl.Select("\nSelect Material tables to extract: ");
+            //Acad_table table = new Acad_table();
+            //table.Select();
+        }
+
+        [CommandMethod("command3")]
+        public void CopySpaceToExternDwg()
+        {
+            ExternDwg.CopySpaceToExtDWG();
         }
     }
 
@@ -36,6 +42,7 @@ namespace C3D_table_export
             Editor ed = acDoc.Editor;
 
             ed.WriteMessage("\n-> Get Area OF Material Solids: command2");
+            ed.WriteMessage("\n-> Copy Model space to ext Dwg: command3");
 
         }
 

@@ -62,28 +62,45 @@ namespace C3D_table_export
             Document acDoc = Application.DocumentManager.MdiActiveDocument;
             Database acCurDb = acDoc.Database;
             Editor ed = acDoc.Editor;
+
+            Autodesk.AutoCAD.DatabaseServices.Table tblClone;
+
             //List<Datas> result = new List<Datas>();
 
             using (Transaction trans = HostApplicationServices.WorkingDatabase.TransactionManager.StartTransaction())
             {
                 try
                 {
+                    // Open the Block table for read
+                    BlockTable acBlkTbl;
+                    acBlkTbl = trans.GetObject(acCurDb.BlockTableId,
+                                                    OpenMode.ForRead) as BlockTable;
+
+                    // Open the Block table record Model space for write
+                    BlockTableRecord acBlkTblRec;
+                    acBlkTblRec = trans.GetObject(acBlkTbl[BlockTableRecord.ModelSpace],
+                                                    OpenMode.ForWrite) as BlockTableRecord;
+
+                    // Create a circle that is at 2,3 with a radius of 4.25
+
                     for (int i = 0; i < acSSet.Count; i++)
                     {
-                        MaterialSection mtrl = trans.GetObject(acSSet[i].ObjectId, OpenMode.ForRead) as MaterialSection;
-                        //result.Add(feat.ObjectId);
+                         Autodesk.Civil.DatabaseServices.Table tbl = acSSet[i].ObjectId.GetObject(OpenMode.ForRead) as Autodesk.Civil.DatabaseServices.Table;
+                        tbl.CopyFrom(tbl);
 
-                        Autodesk.Civil.DatabaseServices.Table tbl = acSSet[i].ObjectId.GetObject(OpenMode.ForRead) as Autodesk.Civil.DatabaseServices.Table;
-                       //string stylename = aecObj.StyleName;
-                       // string mtrlname = Regex.Split(aecObj.Name, "-")[1];
-                       // double area = 0.0;
+                        //acBlkTblRec.AppendEntity(tblClone);
+                        //trans.AddNewlyCreatedDBObject(tblClone, true);
 
-                       // SectionPointCollection sPts = mtrl.SectionPoints;
-                       // Point2dCollection p2 = new Point2dCollection();
-                       // foreach (SectionPoint pt in sPts)
-                       // {
-                       //     p2.Add(new Point2d(pt.Location.X, pt.Location.Y));
-                       // }
+                        //string stylename = aecObj.StyleName;
+                        // string mtrlname = Regex.Split(aecObj.Name, "-")[1];
+                        // double area = 0.0;
+
+                        // SectionPointCollection sPts = mtrl.SectionPoints;
+                        // Point2dCollection p2 = new Point2dCollection();
+                        // foreach (SectionPoint pt in sPts)
+                        // {
+                        //     p2.Add(new Point2d(pt.Location.X, pt.Location.Y));
+                        // }
                         //area = Calculate.Area(p2);
 
                         //result.Add(new Datas { Material = mtrlname, Area = Math.Round(area, 1) });
